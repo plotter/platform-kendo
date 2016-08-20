@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
@@ -24,8 +25,9 @@
             },
             parseOnLoad: true,
             paths: {
-                aurelia: baseUrl + "/scripts/aurelia",
-                views: baseUrl + "/views"
+                aurelia: baseUrl + "scripts/aurelia",
+                app: baseUrl + "app",
+                views: baseUrl + "views"
             }
         };
     </script>
@@ -53,7 +55,7 @@
     <script src="http://js.arcgis.com/3.17/"></script>
 </head>
 
-<body aurelia-app='views/main'>
+<body aurelia-app='app/main'>
     <div class="splash">
         <div class="message">Aurelia Navigation Skeleton</div>
         <i class="fa fa-spinner fa-spin"></i>
@@ -68,4 +70,5 @@
         });
     </script>
 </body>
+
 </html>

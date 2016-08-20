@@ -24,15 +24,15 @@ export class App {
           return stateDirectory;
         }
     ); 
-  }
+  } 
 
   public configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Plotter-Platfrom';
     config.map([
-      {route: ['', 'state'], name: 'state', moduleId: './state/state-repository-chooser', nav: false, title: 'State' },
-      {route: 'session', name: 'session', moduleId: './state/state-session-chooser', nav: false, title: 'Session' },
-      {route: 'new-session', name: 'newSession', moduleId: './state/new-session', nav: false, title: 'New Session' },
-      {route: 'shell', name: 'shell', moduleId: './shell/shell', nav: false, title: 'Shell' },
+      {route: ['', 'state'], name: 'state', moduleId: 'app/state/state-repository-chooser', nav: false, title: 'State' },
+      {route: 'session', name: 'session', moduleId: 'app/state/state-session-chooser', nav: false, title: 'Session' },
+      {route: 'new-session', name: 'newSession', moduleId: 'app/state/new-session', nav: false, title: 'New Session' },
+      {route: 'shell', name: 'shell', moduleId: 'app/shell/shell', nav: false, title: 'Shell' },
     ]);
 
     this.router = router;

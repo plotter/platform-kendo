@@ -6,14 +6,33 @@ var merge = require('merge2');
 var less = require('gulp-less');
 var path = require('path');
 var cache = require('gulp-cached');
- 
+var requirejsOptimize = require('gulp-requirejs-optimize');
+var rename = require('gulp-rename');
+
 gulp.task('build-less', function () {
-  return gulp.src('views/**/*.less')
+  return gulp.src('app/**/*.less')
     .pipe(cache('less'))
     .pipe(less())
-    .pipe(gulp.dest('views'));
+    .pipe(gulp.dest('app'));
 });
 
+// gulp.task('build-bundle', ['build-less', 'build-ts'], function() {
+//   return gulp.src('src/app.js')
+//     .pipe(requirejsOptimize({
+//       optimize: 'none',
+//       name: 'pp-manifest',
+//       excludeShallow: ['text'],
+//       paths: {
+//         "aurelia-framework": "empty:",
+//         "aurelia-fetch-client": "empty:",
+//         "aurelia-router": "empty:",
+//         "pplatform": "../src",
+//         "text": "../node_modules/text/text"
+//       }
+//     }))
+//     .pipe(rename("plotter-platform-bundle.js"))
+//     .pipe(gulp.dest('scripts'));
+// });
 
 var tsProject = ts.createProject({
       typescript: require('typescript'),
@@ -28,7 +47,7 @@ var tsProject = ts.createProject({
 gulp.task('build-ts', function () {
   var tsResult = gulp.src(myPaths.ts,
     { base: "./" })
-    .pipe(cache('ts'))
+    // .pipe(cache('ts'))
     .pipe(ts(tsProject));
 
   return merge([
@@ -40,11 +59,11 @@ gulp.task('build-ts', function () {
 gulp.task('build', ['build-less', 'build-ts']);
 
 var myPaths = {
-  ts: ['views/**/*.ts', 'typings/**/*.d.ts'],
-  js: "views/**/*.js",
-  html: "views/**/*.html",
-  css: "views/**/*.css",
-  less: "views/**/*.less"
+  ts: ['app/**/*.ts', 'views/**/*.ts', 'typings/**/*.d.ts'],
+  js: "app/**/*.js",
+  html: "app/**/*.html",
+  css: "app/**/*.css",
+  less: "app/**/*.less"
 }
 
 gulp.task('serve', ['build'], function (done) {

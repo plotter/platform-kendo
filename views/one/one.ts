@@ -1,6 +1,6 @@
 import { inject } from 'aurelia-framework';
-import { Shell } from '../../shell/shell';
-import { PaneType } from '../../platform/pak/view';
+import { Shell } from 'app/shell/shell';
+import { PaneType } from 'app/platform/pak/view';
 
 @inject(Shell)
 export class One {
