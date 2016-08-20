@@ -1,0 +1,19 @@
+<template>
+    <require from="./state-repository-chooser.css"></require>
+    <div class="header">
+        <h1>Session Chooser (${stateRepoUniqueId}) </h1>
+        <p>${message} </p>
+        <h3>Choose Session:</h3>
+        <div class="input-group input-group-lg">
+            <select class="form-control" value.bind="sessionId">
+                <option value.bind="''">(New Session)</option>
+                <option value.bind="s" repeat.for="s of sessionList">${s}</option>
+            </select>
+            <span class="input-group-addon" click.trigger="choose()">
+                <i class="fa fa-arrow-circle-right fa-lg"></i>
+            </span>
+        </div>
+
+    </div>
+    <div class="body"></div>
+</template>

@@ -1,0 +1,12 @@
+{
+    "locked": true,
+    "uniqueId": "myId",
+    "stateRepositories": [
+        {
+            "locked": true,
+            "uniqueId": "file-host-01",
+            "stateRepositoryType": "File",
+            "path": "state-repository-files"
+        }
+    ]
+}

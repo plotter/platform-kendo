@@ -1,0 +1,13 @@
+<template>
+    <require from="./view-instance-toolbar.css"></require>
+
+    <div class="btn-group" data-toggle="buttons">
+        <label repeat.for="vi of viewInstances" class="btn btn-primary ${vi === $parent.activeViewInstance ? 'active' : ''}">
+            <input type="radio" name="vi" model.bind="vi" checked.bind="$parent.activeViewInstance">
+            <i class="fa fa-plug"></i>
+            <span if.bind="$parent.showTitle">${vi.title}</span>
+            <i class="fa fa-times" click.trigger="removeItem(vi, $index, $parent.viewInstances)"></i>
+        </label>
+    </div>
+
+</template>

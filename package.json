@@ -1,0 +1,48 @@
+{
+  "name": "plotterplatform",
+  "version": "1.0.7",
+  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
+  "keywords": [
+    "aurelia",
+    "navigation",
+    "skeleton"
+  ],
+  "homepage": "http://plotter.github.io",
+  "bugs": {
+    "url": "https://github.com/plotter/platform2/issues"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "electron .",
+    "exe32": "electron-packager . plotterplatform --platform win32 --arch ia32 --out dist/ --ignore \"(dist|node_modules)\"",
+    "exe64": "electron-packager . plotterplatform --platform win32 --arch x64 --out dist/ --ignore \"(dist|node_modules)\"",
+    "set32": "electron-installer-windows --src dist/plotterplatform-win32-ia32/ --dest dist/installers/ia32/",
+    "set64": "electron-installer-windows --src dist/plotterplatform-win32-x64/ --dest dist/installers/x64/",
+    "build": "npm run clean && npm run exe32 && npm run set32",
+    "build-all": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
+  },
+  "license": "MIT",
+  "author": "Mike Graham <mgraham@technicalmedia.com> (http://cmichaelgraham.io)",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/plotter/platform2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "del": "^1.1.0",
+    "gulp": "^3.8.10",
+    "gulp-cached": "^1.1.0",
+    "gulp-changed": "^1.3.2",
+    "gulp-less": "^3.1.0",
+    "gulp-typescript": "*",
+    "merge2": "*",
+    "path": "^0.12.7",
+    "run-sequence": "^1.0.2",
+    "electron-installer-windows": "^0.2.0",
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt": "^1.3.1",
+    "tslint": "^3.11.0",
+    "typescript": ">=1.9.0-dev || ^2.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+node_modules
+.idea
+.DS_STORE
+electron
+dist
+
+
+# PhoneGap - Mac
+phonegap/.DS_Store
+
+# PhoneGap - Node
+phonegap/npm-debug.log
+phonegap/node_modules
+
+# PhoneGap - Cordova
+phonegap/platforms
+
+# PhoneGap - res
+phonegap/resources/signing
