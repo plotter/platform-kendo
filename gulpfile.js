@@ -36,7 +36,7 @@ gulp.task('build-less', function () {
 
 var tsProject = ts.createProject({
       typescript: require('typescript'),
-      declarationFiles: false,
+      declaration: true,
       noExternalResolve: true,
       target: "es5",
       module: "amd",
@@ -47,11 +47,11 @@ var tsProject = ts.createProject({
 gulp.task('build-ts', function () {
   var tsResult = gulp.src(myPaths.ts,
     { base: "./" })
-    // .pipe(cache('ts'))
+    .pipe(cache('ts'))
     .pipe(ts(tsProject));
 
   return merge([
-    tsResult.dts.pipe(gulp.dest('./')),
+    tsResult.dts.pipe(gulp.dest('./plotterplatformtypings/')),
     tsResult.js.pipe(gulp.dest('./'))
   ]);
 });

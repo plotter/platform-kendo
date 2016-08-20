@@ -3,6 +3,7 @@ import { StateRepository, StateRepositoryJSON  } from './state-repository';
 import { StateRepositoryFile } from './state-repository-file';
 import { ElectronHelper } from '../electron-helper';
 import { PhoneGapHelper } from '../phone-gap-helper';
+import { StateSession } from './state-session';
 
 export class StateDirectory {
     public static fromJSON(json: StateDirectoryJSON): StateDirectory {

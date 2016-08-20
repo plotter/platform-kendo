@@ -46,7 +46,7 @@ export class PakDirectory {
 
 // A representation of User's data that can be converted to
 // and from JSON without being altered.
-interface PakDirectoryJSON {
+export interface PakDirectoryJSON {
     locked: boolean;
     uniqueId: string;
     pakRepositories: PakRepositoryJSON[];
