@@ -25,6 +25,14 @@
                     "viewState": "{ a: 'hello, world (three)' }"
                 },
                 {
+                    "uniqueId": "vi-07",
+                    "title": "Windmills",
+                    "viewId": "view3",
+                    "paneType": "alt",
+                    "viewModel": "//plotter.github.io/plotter-view-samples/views/windmills/windmills.js",
+                    "viewState": "{ a: 'hello, world (three)' }"
+                },
+                {
                     "uniqueId": "vi-06",
                     "title": "Test02",
                     "viewId": "view3",
