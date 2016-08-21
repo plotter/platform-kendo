@@ -10,19 +10,13 @@
         <div class="nav" if.bind="navViewInstances.length">
             <div class="nav-body">
                 <div class="nav-host">
-                    <compose
-                        repeat.for="vi of navViewInstances"
-                        view.bind="vi.viewTemplate"
-                        view-model.bind="vi.viewModel"
-                        model.bind="vi.viewState"
-                        show.bind="vi === $parent.navActiveViewInstance">
+                    <compose repeat.for="vi of navViewInstances" view.bind="vi.viewTemplate" view-model.bind="vi.viewModel" model.bind="vi.viewState"
+                        css="visibility: ${vi === $parent.navActiveViewInstance ? 'visible' : 'hidden'}">
                     </compose>
                 </div>
             </div>
             <div class="nav-toolbar" if.bind="navViewInstances.length > 1">
-                <view-instance-toolbar
-                    view-instances.bind="navViewInstances"
-                    active-view-instance.two-way="navActiveViewInstance">
+                <view-instance-toolbar view-instances.bind="navViewInstances" active-view-instance.two-way="navActiveViewInstance">
                 </view-instance-toolbar>
             </div>
         </div>
@@ -31,20 +25,13 @@
 
             <div class="main" if.bind="mainViewInstances.length">
                 <div class="main-toolbar" if.bind="mainViewInstances.length > 1">
-                    <view-instance-toolbar
-                        view-instances.bind="mainViewInstances"
-                        active-view-instance.two-way="mainActiveViewInstance"
-                        show-title="true">
+                    <view-instance-toolbar view-instances.bind="mainViewInstances" active-view-instance.two-way="mainActiveViewInstance" show-title="true">
                     </view-instance-toolbar>
                 </div>
                 <div class="main-body">
                     <div class="main-host">
-                        <compose
-                            repeat.for="vi of mainViewInstances"
-                            view.bind="vi.viewTemplate"
-                            view-model.bind="vi.viewModel"
-                            model.bind="vi.viewState"
-                            show.bind="vi === $parent.mainActiveViewInstance">
+                        <compose repeat.for="vi of mainViewInstances" view.bind="vi.viewTemplate" view-model.bind="vi.viewModel" model.bind="vi.viewState"
+                            css="visibility: ${vi === $parent.mainActiveViewInstance ? 'visible' : 'hidden'}">
                         </compose>
                     </div>
                 </div>
@@ -52,20 +39,13 @@
 
             <div class="alt" if.bind="altViewInstances.length">
                 <div class="alt-toolbar" if.bind="altViewInstances.length > 1">
-                    <view-instance-toolbar
-                        view-instances.bind="altViewInstances"
-                        active-view-instance.two-way="altActiveViewInstance"
-                        show-title="true">
+                    <view-instance-toolbar view-instances.bind="altViewInstances" active-view-instance.two-way="altActiveViewInstance" show-title="true">
                     </view-instance-toolbar>
                 </div>
                 <div class="alt-body">
                     <div class="alt-host">
-                        <compose
-                            repeat.for="vi of altViewInstances"
-                            view.bind="vi.viewTemplate"
-                            view-model.bind="vi.viewModel"
-                            model.bind="vi.viewState"
-                            show.bind="vi === $parent.altActiveViewInstance">
+                        <compose repeat.for="vi of altViewInstances" view.bind="vi.viewTemplate" view-model.bind="vi.viewModel" model.bind="vi.viewState"
+                            css="visibility: ${vi === $parent.altActiveViewInstance ? 'visible' : 'hidden'}">
                         </compose>
                     </div>
                 </div>
