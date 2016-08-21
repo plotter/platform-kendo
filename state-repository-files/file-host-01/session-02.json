@@ -9,6 +9,14 @@
             "pakId": "pak-01",
             "viewInstances": [
                 {
+                    "uniqueId": "vi-07",
+                    "title": "Globe View",
+                    "viewId": "view3",
+                    "paneType": "main",
+                    "viewModel": "//plotter.github.io/plotter-view-samples/views/globe-view/globe-view.js",
+                    "viewState": "{ a: 'hello, world (three)' }"
+                },
+                {
                     "uniqueId": "vi-06",
                     "title": "Test02",
                     "viewId": "view3",
@@ -22,14 +30,6 @@
                     "viewId": "view3",
                     "paneType": "main",
                     "viewModel": "//plotter.github.io/plotter-view-samples/views/simple-view/simple-view.js",
-                    "viewState": "{ a: 'hello, world (three)' }"
-                },
-                {
-                    "uniqueId": "vi-07",
-                    "title": "Globe View",
-                    "viewId": "view3",
-                    "paneType": "main",
-                    "viewModel": "//plotter.github.io/plotter-view-samples/views/globe-view/globe-view.js",
                     "viewState": "{ a: 'hello, world (three)' }"
                 }
             ]
