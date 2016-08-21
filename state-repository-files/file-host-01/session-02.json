@@ -10,6 +10,14 @@
             "viewInstances": [
                 {
                     "uniqueId": "vi-07",
+                    "title": "Globe Matterhorn",
+                    "viewId": "view3",
+                    "paneType": "main",
+                    "viewModel": "//plotter.github.io/plotter-view-samples/views/globe-simple-rotation/globe-simple-rotation.js",
+                    "viewState": "{ a: 'hello, world (three)' }"
+                },
+                {
+                    "uniqueId": "vi-07",
                     "title": "Globe View",
                     "viewId": "view3",
                     "paneType": "main",
