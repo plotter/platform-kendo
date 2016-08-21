@@ -13,7 +13,7 @@
                     "title": "Test02",
                     "viewId": "view3",
                     "paneType": "alt",
-                    "viewTemplate": "http://cmichaelgraham.github.io/plotter/views/test02/test02.html",
+                    "viewTemplate": "//cmichaelgraham.github.io/plotter/views/test02/test02.html",
                     "viewState": "{ a: 'hello, world (three)' }"
                 },
                 {
@@ -21,7 +21,7 @@
                     "title": "Simple View",
                     "viewId": "view3",
                     "paneType": "main",
-                    "viewModel": "https://plotter.github.io/plotter-view-samples/views/simple-view/simple-view.js",
+                    "viewModel": "//plotter.github.io/plotter-view-samples/views/simple-view/simple-view.js",
                     "viewState": "{ a: 'hello, world (three)' }"
                 }
             ]
