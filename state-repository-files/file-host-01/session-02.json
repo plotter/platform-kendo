@@ -24,14 +24,6 @@
                     "viewModel": "//plotter.github.io/plotter-view-samples/views/globe-view/globe-view.js",
                     "viewState": "{ a: 'hello, world (three)' }"
                 },
-                // {
-                //     "uniqueId": "vi-07",
-                //     "title": "Globe View",
-                //     "viewId": "view3",
-                //     "paneType": "main",
-                //     "viewModel": "//plotter.github.io/plotter-view-samples/views/treemap/treemap.js",
-                //     "viewState": "{ a: 'hello, world (three)' }"
-                // },
                 {
                     "uniqueId": "vi-07",
                     "title": "Windmills",
