@@ -13,7 +13,7 @@
                     "title": "US Windmills",
                     "viewId": "view3",
                     "paneType": "main",
-                    "viewModel": "//plotter.github.io/plotter-view-samples/views/uswind/uswind.js",
+                    "viewModel": "//plotter.github.io/plotter-view-samples/views/simiple-wind/simple-wind.js",
                     "viewState": "{ a: 'hello, world (three)' }"
                 }
             ]
