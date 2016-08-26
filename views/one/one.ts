@@ -7,7 +7,7 @@ export class One {
     public model;
     public targetPane: PaneType = 'main';
     public targetMessage: string = 'some message from you...';
-    public targetViewModel: string = '../views/one/one';
+    public targetViewModel: string = 'views/one/one';
 
     constructor(private shell: Shell) { }
 

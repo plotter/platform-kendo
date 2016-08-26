@@ -14,7 +14,7 @@ define(["require", "exports", 'aurelia-framework', 'app/shell/shell'], function 
             this.shell = shell;
             this.targetPane = 'main';
             this.targetMessage = 'some message from you...';
-            this.targetViewModel = '../views/one/one';
+            this.targetViewModel = 'views/one/one';
         }
         One.prototype.activate = function (model) {
             this.model = model;
