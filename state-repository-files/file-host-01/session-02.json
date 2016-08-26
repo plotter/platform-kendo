@@ -10,14 +10,6 @@
             "viewInstances": [
                 {
                     "uniqueId": "vi-07",
-                    "title": "US Windmills",
-                    "viewId": "view3",
-                    "paneType": "main",
-                    "viewModel": "//plotter.github.io/plotter-view-samples/views/uswind/uswind.js",
-                    "viewState": "{ a: 'hello, world (three)' }"
-                },
-                {
-                    "uniqueId": "vi-07",
                     "title": "Globe Matterhorn",
                     "viewId": "view3",
                     "paneType": "main",
