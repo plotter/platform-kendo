@@ -49,18 +49,10 @@
                     "viewState": "{ a: 'hello, world (three)' }"
                 },
                 {
-                    "uniqueId": "vi-07",
-                    "title": "Windmills",
-                    "viewId": "view3",
-                    "paneType": "main",
-                    "viewModel": "//plotter.github.io/plotter-view-samples/views/windmills/windmills.js",
-                    "viewState": "{ a: 'hello, world (three)' }"
-                },
-                {
                     "uniqueId": "vi-06",
                     "title": "Test02",
                     "viewId": "view3",
-                    "paneType": "alt",
+                    "paneType": "main",
                     "viewTemplate": "//cmichaelgraham.github.io/plotter/views/test02/test02.html",
                     "viewState": "{ a: 'hello, world (three)' }"
                 },
