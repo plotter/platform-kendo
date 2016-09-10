@@ -23,3 +23,9 @@ TODO: Explain the project
 ![image](https://cloud.githubusercontent.com/assets/10272832/16762157/89084fdc-47e0-11e6-9c1c-f37a8e98b247.png)
 
 ![image](https://cloud.githubusercontent.com/assets/10272832/16900382/cf8c4414-4be0-11e6-863b-ad09bac318f9.png)
+
+## Typings
+
+```bash
+$ typings install dt~jquery --global
+```

@@ -29,6 +29,8 @@
     "url": "http://github.com/plotter/platform2"
   },
   "devDependencies": {
+    "aurelia-bootstrapper": "^1.0.0",
+    "aurelia-framework": "^1.0.2",
     "browser-sync": "^2.13.0",
     "del": "^1.1.0",
     "electron-installer-windows": "^0.2.0",

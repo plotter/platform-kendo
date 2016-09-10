@@ -26,6 +26,24 @@ export class Shell {
         this.focusViewInstance(newViewInstance);
     }
 
+    public attached() {
+        $(".body").kendoSplitter({
+            orientation: "horizontal",
+            panes: [
+                { collapsible: true, size: "270px" },
+                { collapsible: true }
+            ]
+        });
+
+        $(".body2").kendoSplitter({
+            orientation: "vertical",
+            panes: [
+                { collapsible: true, size: "50%" },
+                { collapsible: true }
+            ]
+        });
+    }
+
     public activate(params) {
         let that = this;
 

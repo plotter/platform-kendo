@@ -61,6 +61,22 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
             this.launchViewInstance(newViewInstance);
             this.focusViewInstance(newViewInstance);
         };
+        Shell.prototype.attached = function () {
+            $(".body").kendoSplitter({
+                orientation: "horizontal",
+                panes: [
+                    { collapsible: true, size: "270px" },
+                    { collapsible: true }
+                ]
+            });
+            $(".body2").kendoSplitter({
+                orientation: "vertical",
+                panes: [
+                    { collapsible: true, size: "50%" },
+                    { collapsible: true }
+                ]
+            });
+        };
         Shell.prototype.activate = function (params) {
             var that = this;
             this.hostId = params.hostId;
@@ -77,9 +93,10 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
         };
         Shell = __decorate([
             aurelia_framework_1.inject(state_directory_1.StateDirectory), 
-            __metadata('design:paramtypes', [state_directory_1.StateDirectory])
+            __metadata('design:paramtypes', [(typeof (_a = typeof state_directory_1.StateDirectory !== 'undefined' && state_directory_1.StateDirectory) === 'function' && _a) || Object])
         ], Shell);
         return Shell;
+        var _a;
     }());
     exports.Shell = Shell;
 });

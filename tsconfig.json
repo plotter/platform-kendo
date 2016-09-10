@@ -1,5 +1,5 @@
 {
-    "version": "1.8.2",
+    "version": "2.0.2",
     "compilerOptions": {
         "target": "es5",
         "module": "amd",
@@ -14,6 +14,5 @@
         "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
-    "files": [
-    ]
+    "allowJs": true
 }
