@@ -29,8 +29,8 @@
 
         <div class="body2">
 
-            <div class="main" if.bind="mainViewInstances.length">
-                <div class="main-toolbar" if.bind="mainViewInstances.length > 0">
+            <div class="main" show.bind="mainViewInstances.length">
+                <div class="main-toolbar" show.bind="mainViewInstances.length > 0">
                     <view-instance-toolbar
                         view-instances.bind="mainViewInstances"
                         active-view-instance.two-way="mainActiveViewInstance"
@@ -52,8 +52,8 @@
                 </div>
             </div>
 
-            <div class="alt" if.bind="altViewInstances.length">
-                <div class="alt-toolbar" if.bind="altViewInstances.length > 0">
+            <div class="alt" show.bind="altViewInstances.length">
+                <div class="alt-toolbar" show.bind="altViewInstances.length > 0">
                     <view-instance-toolbar
                         view-instances.bind="altViewInstances"
                         active-view-instance.two-way="altActiveViewInstance"
