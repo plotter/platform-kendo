@@ -107,5 +107,7 @@ export class Shell {
             default:
                 break;
         }
+
+        this.focusViewInstance(viewInstance);
     }
 }

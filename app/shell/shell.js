@@ -54,6 +54,7 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                     default:
                         break;
                 }
+                _this.focusViewInstance(viewInstance);
             };
         }
         Shell.prototype.launchViewInstanceJSON = function (viewInstanceJSON) {

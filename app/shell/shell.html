@@ -30,7 +30,7 @@
         <div class="body2">
 
             <div class="main" if.bind="mainViewInstances.length">
-                <div class="main-toolbar" if.bind="mainViewInstances.length > 1">
+                <div class="main-toolbar" if.bind="mainViewInstances.length > 0">
                     <view-instance-toolbar
                         view-instances.bind="mainViewInstances"
                         active-view-instance.two-way="mainActiveViewInstance"
@@ -53,7 +53,7 @@
             </div>
 
             <div class="alt" if.bind="altViewInstances.length">
-                <div class="alt-toolbar" if.bind="altViewInstances.length > 1">
+                <div class="alt-toolbar" if.bind="altViewInstances.length > 0">
                     <view-instance-toolbar
                         view-instances.bind="altViewInstances"
                         active-view-instance.two-way="altActiveViewInstance"
