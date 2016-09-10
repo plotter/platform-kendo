@@ -2,6 +2,9 @@
   background-color: mediumaquamarine;
 }
 .body {
+  margin: 0;
+  padding: 0;
+  border: 0;
   flex: 1 0;
   overflow: hidden;
 }
@@ -30,7 +33,15 @@
   padding: 0;
   overflow: auto;
 }
+.body2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 .main {
+  margin: 0;
+  padding: 0;
+  border: 0;
   display: flex;
   flex-direction: column;
   background-color: aquamarine;
@@ -54,6 +65,9 @@
   overflow: auto;
 }
 .alt {
+  margin: 0;
+  padding: 0;
+  border: 0;
   display: flex;
   flex-direction: column;
   background-color: darkcyan;
