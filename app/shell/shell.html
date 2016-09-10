@@ -34,7 +34,9 @@
                     <view-instance-toolbar
                         view-instances.bind="mainViewInstances"
                         active-view-instance.two-way="mainActiveViewInstance"
-                        show-title="true">
+                        show-title.bind="true"
+                        is-up.bind="false"
+                        move-to-view-instances.bind="altViewInstances">
                     </view-instance-toolbar>
                 </div>
                 <div class="main-body">
@@ -55,7 +57,9 @@
                     <view-instance-toolbar
                         view-instances.bind="altViewInstances"
                         active-view-instance.two-way="altActiveViewInstance"
-                        show-title="true">
+                        show-title.bind="true"
+                        is-up.bind="true"
+                        move-to-view-instances.bind="mainViewInstances">
                     </view-instance-toolbar>
                 </div>
                 <div class="alt-body">

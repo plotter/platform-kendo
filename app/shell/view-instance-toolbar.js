@@ -12,6 +12,13 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/view-insta
     var ViewInstanceToolbar = (function () {
         function ViewInstanceToolbar() {
             var _this = this;
+            this.moveItem = function (vi, index, viArr) {
+                viArr.splice(index, 1);
+                if (_this.activeViewInstance === vi && viArr.length > 0) {
+                    _this.activeViewInstance = viArr[0];
+                }
+                _this.moveToViewInstances.push(vi);
+            };
             this.removeItem = function (vi, index, viArr) {
                 viArr.splice(index, 1);
                 if (_this.activeViewInstance === vi && viArr.length > 0) {
@@ -21,7 +28,7 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/view-insta
         }
         __decorate([
             aurelia_framework_1.bindable(), 
-            __metadata('design:type', view_instance_1.ViewInstance)
+            __metadata('design:type', (typeof (_a = typeof view_instance_1.ViewInstance !== 'undefined' && view_instance_1.ViewInstance) === 'function' && _a) || Object)
         ], ViewInstanceToolbar.prototype, "activeViewInstance", void 0);
         __decorate([
             aurelia_framework_1.bindable(), 
@@ -31,11 +38,20 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/view-insta
             aurelia_framework_1.bindable(), 
             __metadata('design:type', Boolean)
         ], ViewInstanceToolbar.prototype, "showTitle", void 0);
+        __decorate([
+            aurelia_framework_1.bindable(), 
+            __metadata('design:type', Boolean)
+        ], ViewInstanceToolbar.prototype, "isUp", void 0);
+        __decorate([
+            aurelia_framework_1.bindable(), 
+            __metadata('design:type', Array)
+        ], ViewInstanceToolbar.prototype, "moveToViewInstances", void 0);
         ViewInstanceToolbar = __decorate([
             aurelia_framework_1.customElement('view-instance-toolbar'), 
             __metadata('design:paramtypes', [])
         ], ViewInstanceToolbar);
         return ViewInstanceToolbar;
+        var _a;
     }());
     exports.ViewInstanceToolbar = ViewInstanceToolbar;
 });

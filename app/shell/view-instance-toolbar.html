@@ -6,6 +6,8 @@
             <input type="radio" name="vi" model.bind="vi" checked.bind="$parent.activeViewInstance">
             <i class="fa fa-plug"></i>
             <span if.bind="$parent.showTitle">${vi.title}</span>
+            <i if.bind="$parent.isUp" class="fa fa-arrow-circle-up" click.trigger="moveItem(vi, $index, $parent.viewInstances)"></i>
+            <i if.bind="!$parent.isUp" class="fa fa-arrow-circle-down" click.trigger="moveItem(vi, $index, $parent.viewInstances)"></i>
             <i class="fa fa-times" click.trigger="removeItem(vi, $index, $parent.viewInstances)"></i>
         </label>
     </div>

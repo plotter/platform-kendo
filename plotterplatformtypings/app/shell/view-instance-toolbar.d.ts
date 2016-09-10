@@ -3,5 +3,8 @@ export declare class ViewInstanceToolbar {
     activeViewInstance: ViewInstance;
     viewInstances: ViewInstance[];
     showTitle: boolean;
-    removeItem: (vi: ViewInstance, index: number, viArr: ViewInstance[]) => void;
+    isUp: boolean;
+    moveToViewInstances: ViewInstance[];
+    moveItem: (vi: any, index: number, viArr: any[]) => void;
+    removeItem: (vi: any, index: number, viArr: any[]) => void;
 }
