@@ -80,9 +80,6 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                     { collapsible: true }
                 ]
             });
-            setTimeout(function () {
-                that.shell.refreshSplitters();
-            }, 50);
         };
         Shell.prototype.refreshSplitters = function () {
             var body2Splitter = $(".body2").data('kendoSplitter');
@@ -125,6 +122,9 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                         that.launchViewInstance(viewInstance);
                     });
                 });
+                setTimeout(function () {
+                    that.refreshSplitters();
+                }, 50);
             });
         };
         Shell = __decorate([

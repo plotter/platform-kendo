@@ -30,7 +30,7 @@ export class Shell {
 
     public attached() {
         let that = this;
-        
+
         $(".body").kendoSplitter({
             orientation: "horizontal",
             panes: [
@@ -46,10 +46,6 @@ export class Shell {
                 { collapsible: true }
             ]
         });
-
-        setTimeout(function() {
-            that.shell.refreshSplitters();
-        }, 50);
     }
 
     public refreshSplitters() {
@@ -96,6 +92,11 @@ export class Shell {
                         that.launchViewInstance(viewInstance);
                     });
                 });
+
+                setTimeout(function () {
+                    that.refreshSplitters();
+                }, 50);
+
             });
     }
 
