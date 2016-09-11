@@ -14,9 +14,11 @@ export class Shell {
 
     public mainViewInstances = new Array<ViewInstance>();
     public mainActiveViewInstance;
+    public mainCollapsed = false;
 
     public altViewInstances = new Array<ViewInstance>();
     public altActiveViewInstance;
+    public altCollapsed = false;
 
     constructor(private stateDirectory: StateDirectory) { }
 
@@ -42,6 +44,35 @@ export class Shell {
                 { collapsible: true }
             ]
         });
+    }
+
+    public refreshSplitters() {
+        let body2Splitter = $(".body2").data('kendoSplitter');
+        // refresh alt pane based (has or doesn't have view instances)
+        if (this.altViewInstances.length > 0) {
+            if (this.altCollapsed) {
+                body2Splitter.expand(".k-pane:last");
+                this.altCollapsed = false;
+            }
+        } else {
+            if (!this.altCollapsed) {
+                body2Splitter.collapse(".k-pane:last");
+                this.altCollapsed = true;
+            }
+        }
+
+        // refresh main pane based (has or doesn't have view instances)
+        if (this.mainViewInstances.length > 0) {
+            if (this.mainCollapsed) {
+                body2Splitter.expand(".k-pane:first");
+                this.mainCollapsed = false;
+            }
+        } else {
+            if (!this.mainCollapsed) {
+                body2Splitter.collapse(".k-pane:first");
+                this.mainCollapsed = true;
+            }
+        }
     }
 
     public activate(params) {

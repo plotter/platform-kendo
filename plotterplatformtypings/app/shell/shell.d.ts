@@ -10,11 +10,14 @@ export declare class Shell {
     navActiveViewInstance: any;
     mainViewInstances: any[];
     mainActiveViewInstance: any;
+    mainCollapsed: boolean;
     altViewInstances: any[];
     altActiveViewInstance: any;
+    altCollapsed: boolean;
     constructor(stateDirectory: StateDirectory);
     launchViewInstanceJSON(viewInstanceJSON: ViewInstanceJSON): void;
     attached(): void;
+    refreshSplitters(): void;
     activate(params: any): void;
     focusViewInstance: (viewInstance: any) => void;
     launchViewInstance: (viewInstance: any) => void;

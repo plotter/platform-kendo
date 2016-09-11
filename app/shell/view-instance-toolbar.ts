@@ -14,6 +14,8 @@ export class ViewInstanceToolbar {
     constructor(private shell: Shell) {}
 
     public moveItem = (vi: ViewInstance, index: number, viArr: ViewInstance[]) => {
+        let that = this;
+        
         viArr.splice(index, 1);
         if (this.activeViewInstance === vi && viArr.length > 0) {
             this.activeViewInstance = viArr[0];
@@ -26,13 +28,22 @@ export class ViewInstanceToolbar {
             vi.paneType = 'alt';
             this.shell.launchViewInstance(vi);
         }
-        //this.moveToViewInstances.push(vi);
+
+        setTimeout(function() {
+            that.shell.refreshSplitters();
+        }, 50);
     }
 
     public removeItem = (vi: ViewInstance, index: number, viArr: ViewInstance[]) => {
+        let that = this;
+
         viArr.splice(index, 1);
         if (this.activeViewInstance === vi && viArr.length > 0) {
             this.activeViewInstance = viArr[0];
         }
+
+        setTimeout(function() {
+            that.shell.refreshSplitters();
+        }, 50);
     }
 }

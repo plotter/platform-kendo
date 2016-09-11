@@ -15,7 +15,9 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
             this.stateDirectory = stateDirectory;
             this.navViewInstances = new Array();
             this.mainViewInstances = new Array();
+            this.mainCollapsed = false;
             this.altViewInstances = new Array();
+            this.altCollapsed = false;
             this.focusViewInstance = function (viewInstance) {
                 switch (viewInstance.paneType) {
                     case 'nav':
@@ -77,6 +79,35 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                     { collapsible: true }
                 ]
             });
+        };
+        Shell.prototype.refreshSplitters = function () {
+            var body2Splitter = $(".body2").data('kendoSplitter');
+            // refresh alt pane based (has or doesn't have view instances)
+            if (this.altViewInstances.length > 0) {
+                if (this.altCollapsed) {
+                    body2Splitter.expand(".k-pane:last");
+                    this.altCollapsed = false;
+                }
+            }
+            else {
+                if (!this.altCollapsed) {
+                    body2Splitter.collapse(".k-pane:last");
+                    this.altCollapsed = true;
+                }
+            }
+            // refresh main pane based (has or doesn't have view instances)
+            if (this.mainViewInstances.length > 0) {
+                if (this.mainCollapsed) {
+                    body2Splitter.expand(".k-pane:first");
+                    this.mainCollapsed = false;
+                }
+            }
+            else {
+                if (!this.mainCollapsed) {
+                    body2Splitter.collapse(".k-pane:first");
+                    this.mainCollapsed = true;
+                }
+            }
         };
         Shell.prototype.activate = function (params) {
             var that = this;

@@ -8,6 +8,6 @@ export declare class ViewInstanceToolbar {
     isUp: boolean;
     moveToViewInstances: ViewInstance[];
     constructor(shell: Shell);
-    moveItem: (vi: ViewInstance, index: number, viArr: ViewInstance[]) => void;
-    removeItem: (vi: ViewInstance, index: number, viArr: ViewInstance[]) => void;
+    moveItem: (vi: any, index: number, viArr: any[]) => void;
+    removeItem: (vi: any, index: number, viArr: any[]) => void;
 }
