@@ -65,6 +65,7 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
             this.focusViewInstance(newViewInstance);
         };
         Shell.prototype.attached = function () {
+            var that = this;
             $(".body").kendoSplitter({
                 orientation: "horizontal",
                 panes: [
@@ -79,6 +80,9 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                     { collapsible: true }
                 ]
             });
+            setTimeout(function () {
+                that.shell.refreshSplitters();
+            }, 50);
         };
         Shell.prototype.refreshSplitters = function () {
             var body2Splitter = $(".body2").data('kendoSplitter');
