@@ -14,6 +14,12 @@ export declare class Shell {
     altViewInstances: any[];
     altActiveViewInstance: any;
     altCollapsed: boolean;
+    private splitterCreatedPromise;
+    private splitterCreatedResolve;
+    private splitterCreatedReject;
+    private viewInstancesLoadedPromise;
+    private viewInstancesLoadedResolve;
+    private viewInstancesLoadedReject;
     constructor(stateDirectory: StateDirectory);
     launchViewInstanceJSON(viewInstanceJSON: ViewInstanceJSON): void;
     attached(): void;

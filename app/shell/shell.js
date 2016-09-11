@@ -58,6 +58,24 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                 }
                 _this.focusViewInstance(viewInstance);
             };
+            var that = this;
+            this.splitterCreatedPromise = new Promise(function (resolve, reject) {
+                that.splitterCreatedResolve = resolve;
+                that.splitterCreatedReject = reject;
+            });
+            this.viewInstancesLoadedPromise = new Promise(function (resolve, reject) {
+                that.viewInstancesLoadedResolve = resolve;
+                that.viewInstancesLoadedReject = reject;
+            });
+            Promise.all([this.splitterCreatedPromise, this.viewInstancesLoadedPromise])
+                .then(function (val) {
+                setTimeout(function () {
+                    that.refreshSplitters();
+                }, 50);
+            })
+                .catch(function (reason) {
+                alert("error in load sequence: " + JSON.stringify(reason));
+            });
         }
         Shell.prototype.launchViewInstanceJSON = function (viewInstanceJSON) {
             var newViewInstance = view_instance_1.ViewInstance.fromJSON(viewInstanceJSON);
@@ -80,6 +98,7 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                     { collapsible: true }
                 ]
             });
+            this.splitterCreatedResolve(true);
         };
         Shell.prototype.refreshSplitters = function () {
             var body2Splitter = $(".body2").data('kendoSplitter');
@@ -122,9 +141,7 @@ define(["require", "exports", 'aurelia-framework', '../platform/state/state-dire
                         that.launchViewInstance(viewInstance);
                     });
                 });
-                setTimeout(function () {
-                    that.refreshSplitters();
-                }, 50);
+                that.viewInstancesLoadedResolve(true);
             });
         };
         Shell = __decorate([

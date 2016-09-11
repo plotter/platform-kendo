@@ -20,7 +20,36 @@ export class Shell {
     public altActiveViewInstance;
     public altCollapsed = false;
 
-    constructor(private stateDirectory: StateDirectory) { }
+    private splitterCreatedPromise: Promise<boolean>;
+    private splitterCreatedResolve;
+    private splitterCreatedReject;
+    private viewInstancesLoadedPromise: Promise<boolean>;
+    private viewInstancesLoadedResolve;
+    private viewInstancesLoadedReject;
+
+    constructor(private stateDirectory: StateDirectory) {
+        let that = this;
+
+        this.splitterCreatedPromise = new Promise<boolean>((resolve, reject) => {
+            that.splitterCreatedResolve = resolve;
+            that.splitterCreatedReject = reject;
+        });
+
+        this.viewInstancesLoadedPromise = new Promise<boolean>((resolve, reject) => {
+            that.viewInstancesLoadedResolve = resolve;
+            that.viewInstancesLoadedReject = reject;
+        });
+
+        Promise.all([this.splitterCreatedPromise, this.viewInstancesLoadedPromise])
+            .then(val => {
+                setTimeout(function () {
+                    that.refreshSplitters();
+                }, 50);
+            })
+            .catch(reason => { 
+                alert(`error in load sequence: ${JSON.stringify(reason)}`);
+            });
+    }
 
     public launchViewInstanceJSON(viewInstanceJSON: ViewInstanceJSON) {
         let newViewInstance = ViewInstance.fromJSON(viewInstanceJSON);
@@ -46,6 +75,8 @@ export class Shell {
                 { collapsible: true }
             ]
         });
+
+        this.splitterCreatedResolve(true);
     }
 
     public refreshSplitters() {
@@ -93,10 +124,7 @@ export class Shell {
                     });
                 });
 
-                setTimeout(function () {
-                    that.refreshSplitters();
-                }, 50);
-
+                that.viewInstancesLoadedResolve(true);
             });
     }
 
